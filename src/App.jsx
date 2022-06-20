@@ -4,8 +4,6 @@ import Upload from "./Upload";
 import Select_support_plan from "./Select_support_plan";
 import Selectplan from "./Selectplan";
 import Payment from  "./Payment";
-import Plans from './Plans';
-import Login from './Login';
 
 const App = () => {
   return(

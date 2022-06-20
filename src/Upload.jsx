@@ -28,7 +28,7 @@ function Upload() {
   return (
     <div class="cont">
       <div className="Upload">
-        <h1 className=" fl">Know your floor plan</h1>
+        <h1 className=" fl">Upload your floor plans</h1>
         <input
         className="txtinput"
           type="text"
@@ -52,7 +52,7 @@ function Upload() {
       <input
         className="txtinput"
           type="text"
-          placeholder="Area(m^2)"
+          placeholder="Area(in m^2)"
           value={area}
           onChange={(event) => {
             setArea(event.target.value.replace(/\D/g, ''));
