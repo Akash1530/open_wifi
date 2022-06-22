@@ -16,7 +16,7 @@
 
 }
 .cont{
-    margin: 50px auto;
+    margin: 0px auto;
     display:flex;
     flex-direction: column;
     align-items:center;
@@ -33,6 +33,7 @@
     align-items: center;
     padding:20px 30px;
     border-radius: 7px;
+    margin-top:50px;
     
   }
   .Upload input 

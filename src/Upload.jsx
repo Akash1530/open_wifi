@@ -1,10 +1,12 @@
 import { useState } from "react";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { ref, uploadBytes, getDownloadURL, } from "firebase/storage";
 import { storage } from "./firebase";
 import { v4 } from "uuid";
 import "./Upload.css";
 import { Link } from "react-router-dom";
+import Progress from "./Progress";
+
 
 function Upload() {
   const [imageUpload, setImageUpload] = useState(null);
@@ -26,7 +28,9 @@ function Upload() {
 
 
   return (
+    
     <div class="cont">
+      <Progress done="20"/>
       <div className="Upload">
         <h1 className=" fl">Upload your floor plans</h1>
         <input
@@ -84,7 +88,7 @@ function Upload() {
         <img src={imageUrls} />
       </div>
       <br/>
-      <Link  to = "/upload/select_support_plan"> <h1 className="Next_color"> <button type="button" class="btn btn-outline-success" >Next</button> </h1> </Link>
+      <Link  to = "/upload/heatmap"> <h1 className="Next_color"> <button type="button" class="btn btn-outline-success" >Next</button> </h1> </Link>
     </div>
   );
 }
