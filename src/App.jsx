@@ -4,8 +4,11 @@ import Upload from "./Upload";
 import Select_support_plan from "./Select_support_plan";
 import Selectplan from "./Selectplan";
 import Payment from  "./Payment";
+
+import { useSelector } from 'react-redux/es/exports';
 import Heatmap from "./Heatmap";
 const App = () => {
+ 
   return(
     <>
     <Routes>
