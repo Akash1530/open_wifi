@@ -1,11 +1,12 @@
 import { useState } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import { ref, uploadBytes, getDownloadURL, } from "firebase/storage";
-import { storage } from "./firebase";
+import { ref ,uploadBytes, getDownloadURL, } from "firebase/storage";
+import { storage,database} from "./firebase";
 import { v4 } from "uuid";
 import "./Upload.css";
 import { Link } from "react-router-dom";
 
+import {ref as ref_database,set} from "firebase/database" ;
 
 import Progress from "./Progress";
 
@@ -28,7 +29,15 @@ function Upload() {
       });
     });
   };
-
+const Write=()=>{
+  set(ref_database(database,"/users"),{
+    length,
+    width,
+    area,
+    cntfloor,
+    imageUrls
+  })
+}
 
   return (
     
@@ -38,7 +47,7 @@ function Upload() {
         <h1 className=" fl">Upload your floor plans</h1>
         <input
         className="txtinput"
-          type="text"
+          type="number"
           placeholder="Length(m)"
           value={length}
           onChange={(event) => {
@@ -87,8 +96,9 @@ function Upload() {
         />
        
 
-        <button type="button" class="btn btn-outline-success" onClick={uploadFile}>Upload</button>
+        <button type="button" class="btn btn-outline-success" onClick={uploadFile}>imageUpload</button>
         <img src={imageUrls} />
+        <button type="button" class="btn btn-outline-success" onClick={Write}>save data</button>
       </div>
       <br/>
       <Link  to = "/upload/heatmap"> <h1 className="Next_color"> <button type="button" class="btn btn-outline-success" >Next</button> </h1> </Link>
