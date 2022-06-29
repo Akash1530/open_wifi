@@ -42,7 +42,7 @@ const Write=()=>{
   return (
     
     <div class="cont">
-      <Progress done="20"/>
+      <div style={{position:"relative", left:"8.5px"}}><Progress done="20"/></div>
       <div className="Upload">
         <h1 className=" fl">Upload your floor plans</h1>
         <input
