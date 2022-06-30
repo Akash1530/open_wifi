@@ -9,6 +9,9 @@ import { Link } from "react-router-dom";
 import {ref as ref_database,set} from "firebase/database" ;
 
 import Progress from "./Progress";
+import { actionCreators } from './state/index';
+import {useDispatch} from 'react-redux';
+import { useLocation } from 'react-router-dom'
 
 
 function Upload() {
@@ -29,6 +32,9 @@ function Upload() {
       });
     });
   };
+  const location = useLocation()
+  const { Plan } = location.state;
+
 const Write=()=>{
   set(ref_database(database,"/users"),{
     length,
@@ -101,7 +107,7 @@ const Write=()=>{
         <button type="button" class="btn btn-outline-success" onClick={Write}>save data</button>
       </div>
       <br/>
-      <Link  to = "/upload/heatmap"> <h1 className="Next_color"> <button type="button" class="btn btn-outline-success" >Next</button> </h1> </Link>
+      <Link  to = "/upload/heatmap" state={{ Plan: Plan }}> <h1 className="Next_color"> <button type="button" class="btn btn-outline-success" >Next</button> </h1> </Link>
     </div>
   );
 }

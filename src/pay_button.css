@@ -15,4 +15,13 @@
     background-color: #4CAF50; /* Green */
     color: white;
   }
+  .Summary{
+    background-color: aqua;
+    color: red;
+    box-sizing: border-box;
+    width: 40%;
+    border: 5px solid rgb(46, 22, 106);
+    margin: auto;
+    /* float: left; */
+  }
   
