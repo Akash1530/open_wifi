@@ -1,0 +1,10 @@
+.heatmap h1{
+    color: black;
+    font-weight: 200;
+}
+.heatmap img{
+    width: 40%;
+    align-items: center;
+    margin:auto;
+    margin-top: 20px;
+}

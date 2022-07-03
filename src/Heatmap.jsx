@@ -8,13 +8,14 @@ import {useDispatch} from 'react-redux';
 import { actionCreators } from './state/index';
 import { useSelector } from 'react-redux/es/exports';
 import { useLocation } from 'react-router-dom'
-
+import { faAlignCenter } from '@fortawesome/free-solid-svg-icons';
+import "./heatmap.css"
 const Heatmap=()=>{
     const dispatch = useDispatch();
     var No_of_devices = 5;
     const amount = useSelector(state=>state.amount)
     const location = useLocation()
-    const { Plan } = location.state
+    const { Plan,price } = location.state
 
    const [url,setUrl]=useState(); 
 useEffect(()=>{
@@ -31,9 +32,13 @@ useEffect(()=>{
     return(
         <>
            <Progress done="40"/>
-           <img src={url} style={{width:"60vw"}}/>
+           
+           <div className='heatmap' >
+           <h1 >No of Device = {No_of_devices}</h1>
+           <img src={url}/>
+           </div>
            <br/>
-           <Link to="/upload/heatmap/select_support_plan" state={{ Plan: Plan }}><button type="button" class="btn btn-outline-success"  onClick={()=>{dispatch(actionCreators.depositMoney(amount*(No_of_devices-1)))}}>continue</button></Link>
+           <Link to="/upload/heatmap/select_support_plan" state={{ Plan: Plan, price:price, device:No_of_devices  }}><button type="button" class="btn btn-outline-success"  onClick={()=>{dispatch(actionCreators.depositMoney(amount*(No_of_devices-1)))}}>continue</button></Link>
         </>
     )
 }

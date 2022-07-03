@@ -33,9 +33,9 @@ function Upload() {
     });
   };
   const location = useLocation()
-  const { Plan } = location.state;
+  const { Plan,price } = location.state;
 
-const Write=()=>{
+const Write=async()=>{
   set(ref_database(database,"/users"),{
     length,
     width,
@@ -48,7 +48,7 @@ const Write=()=>{
   return (
     
     <div class="cont">
-      <div style={{position:"relative", left:"8.5px"}}><Progress done="20"/></div>
+      <div style={{position:"relative", left:"-35.5px"}}><Progress done="20"/></div>
       <div className="Upload">
         <h1 className=" fl">Upload your floor plans</h1>
         <input
@@ -104,10 +104,10 @@ const Write=()=>{
 
         <button type="button" class="btn btn-outline-success" onClick={uploadFile}>imageUpload</button>
         <img src={imageUrls} />
-        <button type="button" class="btn btn-outline-success" onClick={Write}>save data</button>
+       
       </div>
       <br/>
-      <Link  to = "/upload/heatmap" state={{ Plan: Plan }}> <h1 className="Next_color"> <button type="button" class="btn btn-outline-success" >Next</button> </h1> </Link>
+      <Link  to = "/upload/heatmap" onClick={Write} state={{ Plan: Plan, price:price }}> <h1 className="Next_color"> <button type="button" class="btn btn-outline-success" >Next</button> </h1> </Link>
     </div>
   );
 }

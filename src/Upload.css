@@ -4,13 +4,10 @@
     
 
 }
-.fl
-{
-  color:#fff;
-}
+
 .txtinput
 {
-  background:rgb(231, 227, 227);
+  background:transparent;
  border-radius:5px;
  padding:4px;
 
@@ -33,6 +30,7 @@
     align-items: center;
     padding:20px 30px;
     border-radius: 7px;
+    background-color: #ffffff;
     margin-top:50px;
     
   }
@@ -50,4 +48,8 @@
   img {
     width: 300px;
     margin: 10px;
+  }
+  .title{
+    color: #000;
+    font-weight: 900;
   }

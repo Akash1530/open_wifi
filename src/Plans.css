@@ -1,90 +1,110 @@
 body {
-    background-color: #343942;;
-    color: white;
-    padding: 40px;
-    font-family: Arial;
-    text-align: center;
-  }
-  /* Planbox */
+  background-color: #e4e6ea;
+  color: white;
+  padding: 40px;
+  font-family: Arial;
+  text-align: center;
+}
+/* Planbox */
 .selectPlan{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-@media only screen and (max-width: 650px) {
-  .selectPlan{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-  .columns {
-  float: left;
-  width: 87vw !important;
-  border-radius: 10px;
-  background-color: #343942;
-  -webkit-box-shadow: 0px 2px 5px 1px rgba(105,105,105,0.69);
-  -moz-box-shadow: 0px 2px 5px 1px rgba(105,105,105,0.69);
-  box-shadow: 0px 2px 5px 1px rgba(105,105,105,0.69);
-}
-}
-.Remove_txt_deco{
-  margin: 20px;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  text-decoration: none;
+}
+@media only screen and (max-width: 650px) {
+.selectPlan{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.columns {
+float: left;
+width: 87vw !important;
+border-radius: 10px;
+background-color: #343942;
+-webkit-box-shadow: 0px 2px 5px 1px rgba(105,105,105,0.69);
+-moz-box-shadow: 0px 2px 5px 1px rgba(105,105,105,0.69);
+box-shadow: 0px 2px 5px 1px rgba(105,105,105,0.69);
+}
+}
+.Remove_txt_deco{
+margin: 20px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+text-decoration: none;
 }
 
 /* card design  */
 
 .columns {
-  float: left;
-  width: 27vw;
-  border-radius: 10px;
-  background-color: #343942;
-  -webkit-box-shadow: 0px 2px 5px 1px rgba(105,105,105,0.69);
-  -moz-box-shadow: 0px 2px 5px 1px rgba(105,105,105,0.69);
-  box-shadow: 0px 2px 5px 1px rgba(105,105,105,0.69);
+float: left;
+width: 27vw;
+border-radius: 10px;
+background-color: #ffffff;
+-webkit-box-shadow: 0px 2px 5px 1px rgba(105,105,105,0.69);
+-moz-box-shadow: 0px 2px 5px 1px rgba(105,105,105,0.69);
+box-shadow: 0px 2px 5px 1px rgba(105,105,105,0.69);
 }
 
 .price {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+list-style-type: none;
+margin: 0;
+padding: 0;
+-webkit-transition: 0.3s;
+transition: 0.3s;
 }
 
 .price:hover {
-  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
 }
 
 .price .header {
-  background-color: #3b3da7;
-  color: white;
-  font-size: 25px;
-  border-radius: 10px 10px 0px 0px;
+background-color: #3b3da7;
+color: white;
+font-size: 25px;
+border-radius: 10px 10px 0px 0px;
 }
 
 .price li {
-  padding: 10px;
-  text-align: center;
+padding: 10px;
+text-align: center;
 }
 .Next {
 
-  margin: 150px;
-  float: left;
-  width: 6vw;
-  border-radius: 10px;
-  background-color: #035bff;
-  text-decoration: none;
-  font-size: small;
-  color: white;
-  vertical-align: middle;
+margin: 150px;
+float: left;
+width: 6vw;
+border-radius: 10px;
+background-color: #035bff;
+text-decoration: none;
+font-size: small;
+color: white;
+vertical-align: middle;
 }
 .Next_color{
-  /* color: white; */
-  font-size: medium;
-  vertical-align: middle;
+/* color: white; */
+font-size: medium;
+vertical-align: middle;
+}
+#title{
+background-color: white;
+box-sizing: border-box;
+  width: 30%;
+  border: 2px solid;
+  border-radius: 5%;
+  margin: auto;}
+#title_head{
+font-family: "Arial Black", Gadget, sans-serif;
+font-size: 40px;
+letter-spacing: 0.2px;
+word-spacing: 3px;
+color: #000000;
+font-weight: 600;
+text-decoration: none;
+font-style: normal;
+font-variant: normal;
+text-transform: capitalize;
+/* margin-top: 10px; */
 }
