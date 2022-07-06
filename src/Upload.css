@@ -18,6 +18,7 @@
     flex-direction: column;
     align-items:center;
     justify-content:center;
+  
 }
 .Upload {
 
@@ -33,6 +34,7 @@
     background-color: #ffffff;
     margin-top:50px;
     
+    
   }
   .Upload input 
   {  margin-top:5px;
@@ -41,7 +43,7 @@
       line-height:30px;
   }
  .Upload button{
-      margin-top:20px;
+     
       border-radius:5px;
       
   }
@@ -52,4 +54,50 @@
   .title{
     color: #000;
     font-weight: 900;
+  }
+  .coordinate{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    position:relative;
+    left:-20px;
+    
+    
+  }
+  .coordinate input{
+    background:transparent;
+    border-radius:5px;
+    padding:4px;
+    margin-right:10px;
+
+  }
+
+  .hovertext {
+    position: relative;
+    right:-20px;
+    border-bottom: 1px dotted black;
+    
+  }
+  
+  .hovertext:before {
+    content: attr(data-hover);
+    visibility: hidden;
+    opacity: 0;
+    width: 140px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 0;
+    transition: opacity 1s ease-in-out;
+  
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 110%;
+  }
+  
+  .hovertext:hover:before {
+    opacity: 1;
+    visibility: visible;
   }

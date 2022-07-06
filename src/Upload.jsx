@@ -22,6 +22,13 @@ function Upload() {
   const [width,setWidth]=useState(null);
   const [area,setArea]=useState(null);
   const [cntfloor,setCntFloor]=useState(null);
+  const [budget,setBudget]=useState(null);
+  const [xy,setXy]=useState({
+   x:"",
+   y:""
+  });
+
+  const [coordinate,setCoordinate]=useState([]);
 
   const uploadFile = () => {
     if (imageUpload == null) return;
@@ -41,13 +48,35 @@ const Write=async()=>{
     width,
     area,
     cntfloor,
-    imageUrls
+    imageUrls,
+    budget,
+    coordinate
+   
+  })
+}
+const changexy= (event) => {
+        
+        
+    let name=event.target.name;
+    let value=event.target.value.replace(/\D/g, '');
+    
+    setXy({...xy,[name]:value});
+   }
+
+const AddOrdinate=()=>{
+
+  coordinate.push(xy);
+  setCoordinate(coordinate)
+  
+  setXy({
+    x:"",
+    y:""
   })
 }
 
   return (
     
-    <div class="cont">
+    <div className="cont">
       <div style={{position:"relative", left:"-35.5px"}}><Progress done="20"/></div>
       <div className="Upload">
         <h1 className=" fl">Upload your floor plans</h1>
@@ -92,6 +121,41 @@ const Write=async()=>{
           }}
         />
 
+        <input
+        className="txtinput"
+          type="number"
+          placeholder="Approximated budget(INR)"
+          value={budget}
+          onChange={(event) => {
+            setBudget(event.target.value.replace(/\D/g, ''));
+          }}
+        />
+     
+     <div className="coordinate">
+       <input
+         
+          type="number"
+          name="x"
+          placeholder="x"
+          value={xy.x}
+          onChange={changexy}
+        
+        />
+        <input
+       
+       type="number"
+       name="y"
+       placeholder="y"
+       value={xy.y}
+       onChange={changexy}
+     />
+
+   <button onClick={AddOrdinate} type="button" class="btn btn-primary " >Add+  </button>
+   <span class="hovertext" data-hover="click add after each x,y coordinate to store coordinates in array">
+   <i class="fa fa-lightbulb-o"></i>
+  </span>
+     </div> 
+
        
 
         <input
@@ -101,7 +165,7 @@ const Write=async()=>{
           }}
         />
        
-
+       <br/>
         <button type="button" class="btn btn-outline-success" onClick={uploadFile}>imageUpload</button>
         <img src={imageUrls} />
        
