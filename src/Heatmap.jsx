@@ -12,7 +12,8 @@ import { faAlignCenter } from '@fortawesome/free-solid-svg-icons';
 import "./heatmap.css"
 const Heatmap=()=>{
     const dispatch = useDispatch();
-    var No_of_devices = 5;
+    var No_of_devices1 = 5;
+    var No_of_devices2 = 4;
     const amount = useSelector(state=>state.amount)
     const location = useLocation()
     const { Plan,price } = location.state
@@ -31,15 +32,29 @@ useEffect(()=>{
 
     return(
         <>
-           <Progress done="40"/>
-           
-           <div className='heatmap' >
-           <h1 >No of Device = {No_of_devices}</h1>
-           <img src={url}/>
-           </div>
-           <br/>
-           <Link to="/upload/heatmap/select_support_plan" state={{ Plan: Plan, price:price, device:No_of_devices  }}><button type="button" class="btn btn-outline-success"  onClick={()=>{dispatch(actionCreators.depositMoney(amount*(No_of_devices-1)))}}>continue</button></Link>
-        </>
+            <Progress done="40" />
+            <div className="heatmap2_div_link">
+                <div className="card_heatmap2">
+                    <Link to="/upload/heatmap/select_support_plan" state={{ Plan: Plan, price: price, device: No_of_devices1 }} className="Heatmap2_link" onClick={() => { dispatch(actionCreators.depositMoney(amount * (No_of_devices1 - 1))) }}>
+                        <img src={url} alt="Heatmap" />
+                        <h1>Team A Algo</h1>
+                        <p className="price_heatmap2">Price : ${amount * (No_of_devices1)}</p>
+                        <p>Signal Strength : Strong</p>
+
+                    </Link>
+                </div>
+                <div className="card_heatmap2">
+                    <Link to="/upload/heatmap/select_support_plan" state={{ Plan: Plan, price: price, device: No_of_devices2 }} className="Heatmap2_link" onClick={() => { dispatch(actionCreators.depositMoney(amount * (No_of_devices2 - 1))) }}>
+
+                        <img src={url} alt="Heatmap" />
+                        <h1>Team B Algo</h1>
+                        <p className="price_heatmap2">Price : ${amount * (No_of_devices2)}</p>
+                        <p>Signal Strength : Poor</p>
+
+                    </Link>
+                </div>
+            </div>
+            </>
     )
 }
 

@@ -19,8 +19,10 @@
   align-items: center;
 }
 .summary{
-  width: 20%;
-  margin: auto;
+    margin: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
